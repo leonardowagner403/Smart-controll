@@ -3,22 +3,49 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login - Smart Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Control - Login</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
-        <h1>Smart Control</h1>
-        <p>Bem-vindo ao sistema.</p>
+        <form class="login-card">
 
-        <a href="dashboard.html">
-            <button>Entrar</button>
-        </a>
+            <h1>Smart Control</h1>
 
-    </div>
+            <p>Faça login para acessar o sistema</p>
+
+            <label for="email">E-mail</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+
+            <label for="senha">Senha</label>
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+                required
+            >
+
+            <a href="dashboard.html" class="botao">
+                
+                Entrar
+            </a>
+
+        </form>
+
+    </main>
 
 </body>
 
