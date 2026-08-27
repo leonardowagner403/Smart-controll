@@ -1,54 +1,79 @@
+function exibirBoasvindas(nomeCompleto) {
+    const dataAtual = new Date();
+    const diasSemana = [
+        "Domingo",
+        "Segunda-Feira",
+        "Terça-Feira",
+        "Quarta-Feira",
+        "Quinta-Feira",
+        "Sexta-Feira",
+        "Sábado"
+    ];
 
-function formatarDataAtual() {
-  const agora = new Date();
+    const diaSemana = diasSemana[dataAtual.getDay()];
+    const dia = dataAtual.getDate().toString().padStart(2, "0");
+    const mes = (dataAtual.getMonth() + 1).toString().padStart(2, "0");
+    const ano = dataAtual.getFullYear();
+    const hora = dataAtual.getHours().toString().padStart(2, "0");
+    const minutos = dataAtual.getMinutes().toString().padStart(2, "0");
 
- 
-  const diaSemana = agora.toLocaleDateString('pt-BR', { weekday: 'long' });
-  const diaSemanaFormatado = diaSemana.charAt(0).toUpperCase() + diaSemana.slice(1);
+    let saudacao;
 
-  
-  const dia = String(agora.getDate()).padStart(2, '0');
-  const mes = String(agora.getMonth() + 1).padStart(2, '0');
-  const ano = agora.getFullYear();
+    if (hora < 12) {
+        saudacao = "Bom Dia";
+    } else if (hora < 18) {
+        saudacao = "Boa Tarde";
+    } else {
+        saudacao = "Boa Noite";
+    }
 
- 
-  const horas = String(agora.getHours()).padStart(2, '0');
-  const minutos = String(agora.getMinutes()).padStart(2, '0');
-
-  
-  const offsetMinutos = agora.getTimezoneOffset();
-  const sinalOffset = offsetMinutos > 0 ? '-' : '+';
-  const horasOffset = String(Math.floor(Math.abs(offsetMinutos) / 60)).padStart(2, '0');
-  const minsOffset = String(Math.abs(offsetMinutos) % 60).padStart(2, '0');
-  const fusoHorario = `(${sinalOffset}${horasOffset}:${minsOffset})`;
-
-  return `${diaSemanaFormatado}, ${dia}/${mes}/${ano} – ${horas}:${minutos} ${fusoHorario}`;
+    const mensagem = `${saudacao}, ${nomeCompleto}. Hoje é ${diaSemana}, ${dia}/${mes}/${ano} - ${hora}:${minutos} (-03:00)`;
+    document.getElementById("mensagemboasvindas").textContent = mensagem;
 }
 
-
-function exibirBoasVindas() {
-  let nome = prompt('Digite seu primeiro nome:');
-  let sobrenome = prompt('Digite seu sobrenome:');
-
-  if (!nome || !nome.trim()) {
-      nome = 'Leonardo';
-  }
-
-  const nomeCompleto = sobrenome && sobrenome.trim() ? `${nome.trim()} ${sobrenome.trim()}` : nome.trim();
-  const dataAtual = formatarDataAtual();
-
-  
-  const elementoBoasVindas = document.getElementById('boas-vindas');
-
-  if (elementoBoasVindas) {
-      elementoBoasVindas.textContent = `Olá, ${nomeCompleto}! Hoje é ${dataAtual}`;
-  }
-}
+const nomeUsuario = prompt("Digite seu nome");
+exibirBoasvindas(nomeUsuario);
 
 
-exibirBoasVindas();
 
 
-    
-  
-  
+const campoBusca = document.getElementById("campoBusca");
+const tabelaNomes = document.getElementById("tabelaNomes");
+console.log(tabelaNomes)
+campoBusca.addEventListener("input", function () {
+    const busca = campoBusca.value.toLowerCase();
+
+    const linhas = tabelaNomes.querySelectorAll("tr");
+
+    linhas.forEach(function (linha) {
+        const nome = 
+linha.querySelector("td").textContent.toLowerCase();
+
+        if (nome.includes(busca)) {
+            linha.style.display = "";
+        } else {
+            linha.style.display = "none";
+        }
+    });
+});
+
+
+const botaoTema = document.getElementById("botaoTema")
+botaoTema.addEventListener("click",function () {
+    document.body.classList.toggle("dark-theme");
+});
+
+const botaoMenu = document.querySelector("#botaoMenu");
+const menu = document.querySelector(".menu");
+
+botaoMenu.addEventListener("click", function (e) {
+    console.log(e.target)
+    menu.classList.toggle("aberto");
+
+    if
+    (menu.classList.contains("aberto")) {
+        botaoMenu.textContent = "X Fechar";
+    } else {
+        botaoMenu.textContent = "☰ Menu";
+    }
+});

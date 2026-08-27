@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    
 </head>
 
 <body>
@@ -13,15 +15,17 @@
 <header class="header">
      <h1>Dashboard</h1>
 
-     <nav>
+     <button id="botaoMenu">☰ Menu</button>
 
+     <nav>
         <ul class="menu">
 
-        <li><a href="#">Relatórios</a></li>
-        <li><a href="#">Configurações</a></li>
-        <li><a href="#">Perfil</a></li>
-        <li><a href="cadastro.html">Sair</a></li>
-    </ul>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="cadastro.html">Sair</a></li>
+            <li><button id="botaoTema">Mudar Fundo</button></li>
+        </ul>
   </nav>
 </header>
 
@@ -44,11 +48,14 @@
                 <h2>Sistema</h2>
                 <p>Funcionando normalmente</p>
                 <span class="badge">Online</span>
+                
             </div>
         
         </section>
         
         <h2>Relatório de Acessos Recentes</h2>
+        <input type="text" id="campoBusca" placeholder="Buscar Nome ...">
+
 
     <table border="1">
         <thead>
@@ -60,51 +67,37 @@
             </tr>
         </thead>
 
-        <tbody>
+        <tbody id="tabelaNomes">
             <tr>
-                <td>João</td>
+                <td>Kilyan Mbappe RMA</td>
                 <td>29/07/2026</td>
-                <td>08:00</td>
+                <td>07:30</td>
                 <td>Online</td>
             </tr>
 
             <tr>
-                <td>Maria</td>
-                <td>29/07/2026</td>
-                <td>08:15</td>
-                <td>Offline</td>
-            </tr>
-
-            <tr>
-                <td>Carlos</td>
-                <td>29/07/2026</td>
+                <td>Ousmane Dembélé PSG</td>
+                <td>29/09/2026</td>
                 <td>08:30</td>
                 <td>Online</td>
             </tr>
+
+            <tr>
+                <td>Ronaldinho Gaúcho MLN</td>
+                <td>29/10/2026</td>
+                <td>09:30</td>
+                <td>Offline</td>
+            </tr>
         </tbody>
     </table>
-
     <footer>
         <a href="https://pedrolandia.com.br" target="_blank">
             Portal Pedro Landia
         </a>
     </footer>
-
-    <h2 id ="boas-vindas"></h2>
+    <h2 id="mensagemboasvindas"></h2>
 
     <script src="assets/java/main.js"></script>
 </body>
 </html>
-
-<script>
-    
-    const nome = localStorage.getItem('usuarioNome');
-    const sobrenome = localStorage.getItem('usuarioSobrenome');
-
-   
-    if (nome && sobrenome) {
-        document.getElementById('boasVindas').textContent = `Bem-vindo(a), ${nome} ${sobrenome}!`;
-    }
-</script>
-    
    

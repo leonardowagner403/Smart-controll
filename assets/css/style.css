@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,6 +9,11 @@ body {
     font-family: Arial, sans-serif;
     background-color: rgb(0, 0, 0);
     font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-theme {
+    background-color: white;
 }
 
 .container {
@@ -56,6 +61,7 @@ footer {
 footer a {
     text-decoration: none;
     font-weight: bold;
+    color :#fff
 }
 
 .header-container {
