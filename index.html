@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Smart Control - Login</title>
-
+    
     <link rel="stylesheet" href="assets/css/login.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -15,7 +15,8 @@
 
     <main class="container">
 
-        <form class="login-card">
+      
+        <form class="login-card" id="form-login" onsubmit="validarLogin(event)">
 
             <h1>Smart Control</h1>
 
@@ -39,20 +40,25 @@
                 required
             >
 
-            <a href="dashboard.html" class="botao">
-                
-                Entrar
-            </a>
+            
+            <span id="mensagem-erro" style="color: #ff4d4d; display: none; margin: 10px 0; font-size: 14px; text-align: center;"></span>
+
+            
+            <button type="submit" class="botao">Entrar</button>
 
         </form>
 
     </main>
 
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+  
     <script src="assets/java/main.js"></script>
+
 </body>
 </html>
-   
-   
 
 
 

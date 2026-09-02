@@ -23,42 +23,77 @@
             <li><a href="#">Relatórios</a></li>
             <li><a href="#">Configurações</a></li>
             <li><a href="#">Perfil</a></li>
-            <li><a href="cadastro.html">Sair</a></li>
+            <li><a href="index.html">Sair</a></li>
             <li><button id="botaoTema">Mudar Fundo</button></li>
         </ul>
-  </nav>
+     </nav>
 </header>
 
-        <section class="metricas">
+    <section class="metricas">
 
-            <div class="cartao">
-                <h2>Usuários</h2>
-                <p>150 cadastrados</p>
-                <span class="badge">Ativo</span>
-                
-            </div>
-        
-            <div class="cartao">
-                <h2>Alertas</h2>
-                <p>Novas notificações</p>
-                <span class="badge">3 Alertas</span>
-            </div>
-        
-            <div class="cartao">
-                <h2>Sistema</h2>
-                <p>Funcionando normalmente</p>
-                <span class="badge">Online</span>
-                
-            </div>
-        
-        </section>
-        
-        <h2>Relatório de Acessos Recentes</h2>
-        <input type="text" id="campoBusca" placeholder="Buscar Nome ...">
+        <div class="cartao">
+            <h2>Usuários</h2>
+            <p>150 cadastrados</p>
+            <span class="badge">Ativo</span>
+        </div>
+    
+        <div class="cartao">
+            <h2>Alertas</h2>
+            <p>Novas notificações</p>
+            <span class="badge">3 Alertas</span>
+        </div>
+    
+        <div class="cartao">
+            <h2>Sistema</h2>
+            <p>Funcionando normalmente</p>
+            <span class="badge">Online</span>
+        </div>
+    
+    </section>
 
+    
+    <section style="margin: 20px 0;">
+        <h2>Telemetria do Sistema em Tempo Real</h2>
+        <div id="painel-status" class="card-telemetria status-ativo">
+            Status: <span id="temperatura">-- °C</span>
+        </div>
+    </section>
 
+   
+        <h2>Controle de Dispositivos</h2>
+        <form onsubmit="adicionarDispositivo(event)" style="margin-bottom: 10px;">
+            <input type="text" id="nome-dispositivo" placeholder="Nome do novo dispositivo..." required>
+            <button type="submit" class="btn-toggle">Cadastrar Dispositivo</button>
+        </form>
+
+        <ul id="lista-dispositivos">
+            <li class="dispositivo-item status-ativo">
+                <span>Sensor Principal - Caldeira</span>
+                <button class="btn-toggle" onclick="alternarEstado(this)">Desligar</button>
+            </li>
+        </ul>
+    </section>
+
+    
+    <section class="form-container">
+        <h2>Parametrização & Suporte</h2>
+        <form id="form-parametros">
+            <label for="ip-input">Endereço IP do Servidor:</label>
+            <input type="text" id="ip-input" placeholder="192.168.0.1" required>
+
+            <label for="email-input">E-mail do Administrador:</label>
+            <input type="email" id="email-input" placeholder="admin@empresa.com" required>
+
+            <button type="submit" class="btn-toggle">Salvar Configurações</button>
+        </form>
+    </section>
+    
+    <h2 style="margin-top: 30px;">Relatório de Acessos Recentes</h2>
+    <input type="text" id="campoBusca" placeholder="Buscar Nome ...">
+    
     <table border="1">
         <thead>
+
             <tr>
                 <th>Nome</th>
                 <th>Data</th>
@@ -90,14 +125,20 @@
             </tr>
         </tbody>
     </table>
+
     <footer>
         <a href="https://pedrolandia.com.br" target="_blank">
             Portal Pedro Landia
         </a>
     </footer>
+
     <h2 id="mensagemboasvindas"></h2>
 
+   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+    
     <script src="assets/java/main.js"></script>
 </body>
 </html>
-   

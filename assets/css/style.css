@@ -61,7 +61,7 @@ footer {
 footer a {
     text-decoration: none;
     font-weight: bold;
-    color :#fff
+    color :#fff;
 }
 
 .header-container {
@@ -88,4 +88,106 @@ footer a {
 
 .nav-links a:hover {
     color: #ff0000;
+}
+
+.card-telemetria {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.status-ativo {
+    background-color: #1ea70c;
+    color: #f5f8f6;
+    border-left: 6px solid #7e817e;
+}
+
+.status-inativo {
+    background-color: #910707;
+    color: #dedfe0;
+    border-left: 6px solid #6c757d;
+}
+
+.status-alerta {
+    background-color: #9e000d;
+    color: #fdfdfd;
+    border-left: 6px solid #838181;
+    animation: piscarAlerta 1s infinite alternate;
+}
+
+@keyframes piscarAlerta {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+
+
+
+#painel-status.status-ativo {
+    background-color: #69f369; 
+    color: #eff3ef; 
+    border-left: 6px solid #878887;
+}
+
+
+#painel-status.status-alerta {
+    background-color: #f11a1a; 
+    color: #f3efef; 
+    border-left: 6px solid #727272;
+    animation: piscarAlerta 1s infinite alternate;
+}
+
+
+
+#lista-dispositivos {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.dispositivo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.btn-toggle {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    transition: background-color 0.2s ease;
+}
+
+.btn-toggle:hover {
+    background-color: #ff0000;
+}
+
+.form-container {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px 0;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+    color: #fff;
 }
